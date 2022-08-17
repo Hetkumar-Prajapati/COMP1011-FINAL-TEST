@@ -46,8 +46,19 @@ public class Customer {
     @SerializedName("heightInCM")
     private String m_heightInCM;
 
+    @SerializedName("purchases")
+    private String m_purchases;
 
     //getters and setters (Mutators and Accessors)
+
+    public String getPurchases() {
+        return m_purchases;
+    }
+
+    public void setPurchases(String m_purchases) {
+        this.m_purchases = m_purchases;
+    }
+
     public String getId() {
         return m_id;
     }
@@ -177,9 +188,10 @@ public class Customer {
         this.m_phoneNumber = "";
         this.m_pounds = "";
         this.m_heightInCM = "";
+        this.m_purchases = "";
 
     }
-    public Customer(String id, String gender, String firstName, String lastName, String streetAddress, String city, String province, String postalCode, String emailAddress, String ccType, String bloodType, String phoneNumber, String pounds, String heightInCM) {
+    public Customer(String id, String gender, String firstName, String lastName, String streetAddress, String city, String province, String postalCode, String emailAddress, String ccType, String bloodType, String phoneNumber, String pounds, String heightInCM , String purchases) {
         this.m_id = id;
         this.m_gender = gender;
         this.m_firstName = firstName;
@@ -194,6 +206,8 @@ public class Customer {
         this.m_phoneNumber = phoneNumber;
         this.m_pounds = pounds;
         this.m_heightInCM = heightInCM;
+        this.m_purchases = purchases;
+
     }
 
     //Overridden Methods
@@ -202,9 +216,9 @@ public class Customer {
     public String toString() {
 
         /*
-        return String.format("id: %s%n gender: %s%n firstName: %s%n lastName: %s%n streetAddress: %s%n city: %s%n province: %s%n postalCode: %s%n emailAddress: %s%n ccType: %s%n bloodType: %s%n phoneNumber: %s%n pounds: %s%n heightInCM: %s%n",
+        return String.format("id: %s%n gender: %s%n firstName: %s%n lastName: %s%n streetAddress: %s%n city: %s%n province: %s%n postalCode: %s%n emailAddress: %s%n ccType: %s%n bloodType: %s%n phoneNumber: %s%n pounds: %s%n heightInCM: %s%n purchases: %s%n ",
                 getId(), getGender(), getFirstName(), getLastName(), getStreetAddress(), getCity(), getProvince(),
-                getPostalCode(), getEmailAddress(), getCcType(), getBloodType(), getPhoneNumber(), getPounds(), getHeightInCM() );
+                getPostalCode(), getEmailAddress(), getCcType(), getBloodType(), getPhoneNumber(), getPounds(), getHeightInCM(), getPurchases() );
 
          */
 
