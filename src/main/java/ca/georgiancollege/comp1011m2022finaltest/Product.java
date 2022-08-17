@@ -13,10 +13,10 @@ public class Product {
   private String m_name;
 
   @SerializedName("salePrice")
-  private String m_salePrice;
+  private double m_salePrice;
 
   @SerializedName("regularPrice")
-  private String m_regularPrice;
+  private double m_regularPrice;
 
   @SerializedName("image")
   private String m_image;
@@ -46,19 +46,19 @@ public class Product {
     this.m_name = m_name;
   }
 
-  public String getSalePrice() {
+  public double getSalePrice() {
     return m_salePrice;
   }
 
-  public void setSalePrice(String m_salePrice) {
+  public void setSalePrice(double m_salePrice) {
     this.m_salePrice = m_salePrice;
   }
 
-  public String getRegularPrice() {
+  public double getRegularPrice() {
     return m_regularPrice;
   }
 
-  public void setRegularPrice(String m_regularPrice) {
+  public void setRegularPrice(double m_regularPrice) {
     this.m_regularPrice = m_regularPrice;
   }
 
@@ -76,12 +76,12 @@ public class Product {
     this.m_id = "";
     this.m_sku = "";
     this.m_name = "";
-    this.m_salePrice = "";
-    this.m_regularPrice = "";
+    this.m_salePrice= Double.parseDouble("");
+    this.m_regularPrice = Double.parseDouble("");
     this.m_image = "";
   }
 
-  public Product(String id, String sku, String name, String salePrice, String regularPrice, String image) {
+  public Product(String id, String sku, String name, double salePrice, double regularPrice, String image) {
     this.m_id = id;
     this.m_sku = sku;
     this.m_name = name;

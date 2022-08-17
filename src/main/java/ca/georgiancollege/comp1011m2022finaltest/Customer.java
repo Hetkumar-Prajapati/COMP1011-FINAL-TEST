@@ -210,6 +210,37 @@ public class Customer {
 
     }
 
+
+    //Create a method that returns the total purchases as a double.
+    Product product = new Product();
+    public double totalPurchases(double totalPurchases)
+    {
+        totalPurchases += product.getSalePrice();
+        return totalPurchases;
+    }
+
+    //Create a method that returns the total amount the customer has saved as a double
+    public double totalAmountSaved(double totalAmountSaved)
+    {
+        totalAmountSaved += product.getRegularPrice() - product.getSalePrice() ;
+        return totalAmountSaved;
+    }
+
+    // Create a method that returns true if the customer saved $5 or more on all their purchases.
+    public boolean saved5 (boolean saved5)
+    {
+        if(product.getRegularPrice() - product.getSalePrice() >= 5)
+        {
+            saved5 = true;
+        }
+        return saved5;
+    }
+
+
+
+
+
+
     //Overridden Methods
 
      @Override
@@ -226,4 +257,6 @@ public class Customer {
         return String.format("id: %s, firstName: %s , lastName: %s",
                getId(),  getFirstName(), getLastName());
     }
+
+
 }
