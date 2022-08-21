@@ -236,7 +236,9 @@ public class Customer {
         return saved5;
     }
 
-
+    public String getImage() {
+        return product.getImage();
+    }
 
 
 

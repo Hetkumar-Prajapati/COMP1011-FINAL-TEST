@@ -7,6 +7,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import org.json.simple.parser.ParseException;
 
@@ -78,8 +79,26 @@ public class TableViewController implements Initializable{
         lastNameColumn.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         phoneColumn.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         totalPurchaseColumn.setCellValueFactory(new PropertyValueFactory<>("totalPurchases"));
-            tableView.getItems().addAll(APIManager.Instance().readCustomerTable());
+        tableView.getItems().addAll(APIManager.Instance().readCustomerTable());
+
+
+        var imageNotFoundImage = new Image(getClass().getResourceAsStream("poster-not-found.png"));
+
+
+        // display image user clicks on a customer, it will display all of their purchases in the ListView.
+        tableView.getSelectionModel().selectedItemProperty().addListener((obs, oldMovieSelected, newMovieSelected) -> {
+            System.out.println(newMovieSelected);
+            try {
+                imageView.setImage(new Image(newMovieSelected.getImage()));
+            } catch (Exception e) {
+                imageView.setImage(imageNotFoundImage);
+            }
+        });
+
+
     }
 
    // getSelectionModel().selectedItemProperty().addListener( );
+
+
 }
